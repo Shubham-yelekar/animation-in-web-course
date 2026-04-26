@@ -1,5 +1,8 @@
 import "./App.css";
-import ModuleOne from "./components/module-one/ModuleOne";
+import ArrowDown from "./components/arrow-down/ArrowDown";
+import CardHover from "./components/card-hover/CardHover";
+import CardStacking from "./components/card-stacking/CardStacking";
+
 import Container from "./components/ui/Container";
 import Footer from "./components/ui/Footer";
 import Header from "./components/ui/Header";
@@ -13,7 +16,9 @@ function App() {
         <Container>
           <Header />
           <Saperator />
-          <ModuleOne />
+          <CardStacking />
+          <CardHover />
+          <ArrowDown />
           <Footer />
         </Container>
       </ThemeProvider>
