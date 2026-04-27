@@ -1,12 +1,8 @@
 import CourseLogo from "./CourseLogo";
-import ThemeSwitcher from "./ThemeSwitcher";
 
 const Header = () => {
   return (
-    <section className="relative flex flex-col gap-8 bg-neutral-50 p-2 dark:bg-neutral-900">
-      <div className="flex">
-        <ThemeSwitcher />
-      </div>
+    <section className="relative flex flex-col gap-8 bg-neutral-50 px-2 py-4 dark:bg-neutral-900">
       <h1 className="text-5xl font-semibold tracking-tight dark:tracking-tight">
         Collection of all the components I created in the course.
       </h1>

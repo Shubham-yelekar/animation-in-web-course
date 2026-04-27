@@ -4,7 +4,7 @@ const CardStacking = () => {
   return (
     <section>
       <div className="px-2 py-4">
-        <h4 className="text-md">Cars Stacking</h4>
+        <h4 className="text-md font-semibold">Cars Stacking</h4>
 
         <p className="text-sm text-neutral-400 dark:text-neutral-500">
           This is similar to the sonnar components

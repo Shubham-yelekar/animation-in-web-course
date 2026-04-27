@@ -5,7 +5,7 @@ const Heading = ({ module, title }: { module: string; title: string }) => {
         {" "}
         Module {module}
       </p>
-      <h2 className="text-md">{title}</h2>
+      <h2 className="text-md font-semibold">{title}</h2>
     </div>
   );
 };

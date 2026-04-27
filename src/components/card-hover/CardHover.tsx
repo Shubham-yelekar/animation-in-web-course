@@ -4,7 +4,7 @@ const CardHover = () => {
   return (
     <section>
       <div className="px-2 py-4">
-        <h4 className="text-md">Card Hover</h4>
+        <h4 className="text-md font-semibold">Card Hover</h4>
 
         <p className="text-sm text-neutral-400 dark:text-neutral-500">
           Hover to reveal the information box
@@ -21,10 +21,10 @@ const CardHoverComponent = () => {
   return (
     <a
       href="#"
-      className="group relative mx-auto mt-4 flex h-75 w-80 items-end overflow-hidden rounded-2xl bg-white no-underline shadow-sm ring-1 ring-zinc-900/10"
+      className="group bg-card relative mx-auto mt-4 flex h-75 w-80 items-end overflow-hidden rounded-2xl no-underline shadow-sm ring-1 ring-zinc-900/10"
     >
-      <div className="will-change-[transform, opacity] transition-[opacity, transform] ease-out-quint relative m-1.5 w-full translate-y-full transform rounded-xl border border-white bg-neutral-50 px-3.5 pt-2.5 pb-3 text-sm opacity-0 shadow-sm ring-1 ring-black/5 duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
-        <h3 className="font-medium text-zinc-900">Project name</h3>
+      <div className="will-change-[transform, opacity] transition-[opacity, transform] ease-out-quint border-border bg-popover relative m-1.5 w-full translate-y-full transform rounded-xl border px-3.5 pt-2.5 pb-3 text-sm opacity-0 shadow-sm ring-1 ring-black/5 duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+        <h3 className="text-popover-foreground font-medium">Project name</h3>
         <p className="mt-1 leading-none text-zinc-500">Project description</p>
 
         {/* card-icon */}

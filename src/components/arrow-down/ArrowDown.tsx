@@ -4,7 +4,7 @@ const ArrowDown = () => {
   return (
     <section>
       <div className="px-2 py-4">
-        <h4 className="text-md">Down Arrow</h4>
+        <h4 className="text-md font-semibold">Down Arrow</h4>
 
         <p className="text-sm text-neutral-400 dark:text-neutral-500">
           Hover to move the arrow

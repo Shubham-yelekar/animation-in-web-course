@@ -206,3 +206,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@utility bg-pattern-stripes {
+  background-image: repeating-linear-gradient(
+    315deg,
+    var(--border) 0px,
+    var(--border) 0.5px,
+    transparent 1px,
+    transparent 10px
+  );
+}
