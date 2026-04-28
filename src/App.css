@@ -199,12 +199,30 @@
 
   --animate-text-reveal: TextReveal 1.3s cubic-bezier(0.19, 1, 0.22, 1)
     backwards;
+  --animate-orbiting: Orbiting 5s linear infinite forwards;
+  --animate-rotate: Rotate 5s linear infinite forwards;
+
   @keyframes TextReveal {
     from {
       transform: translateY(100%);
     }
     to {
       transform: translateY(0%);
+    }
+  }
+
+  @keyframes Orbiting {
+    from {
+      transform: rotateY(0deg) translateZ(72px) rotateY(360deg);
+    }
+    to {
+      transform: rotateY(360deg) translateZ(72px) rotateY(0deg);
+    }
+  }
+
+  @keyframes Rotate {
+    to {
+      transform: rotateY(360deg);
     }
   }
 }

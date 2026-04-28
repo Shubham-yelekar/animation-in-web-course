@@ -1,7 +1,9 @@
 import "./App.css";
 import ArrowDown from "./components/arrow-down/ArrowDown";
+import CoinComponent from "./components/coin/CoinComponent";
 import CardHover from "./components/card-hover/CardHover";
 import CardStacking from "./components/card-stacking/CardStacking";
+import OrbitingComponent from "./components/orbiting/OrbitingComponent";
 import TextAnimationComponent from "./components/text-animation/TextAnimationComponent";
 import Toast from "./components/toast-component/ToastComponent";
 
@@ -25,13 +27,16 @@ function App() {
           </div>
           <Header />
           <Separator />
+          {/* --- */}
+
           <CardStacking />
-
           <CardHover />
-
           <ArrowDown />
           <Toast />
           <TextAnimationComponent />
+          <OrbitingComponent />
+          <CoinComponent />
+          {/* --- */}
           <Separator />
           <Footer />
         </Container>
