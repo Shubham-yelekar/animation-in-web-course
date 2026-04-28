@@ -14,6 +14,8 @@ import Separator from "./components/ui/Saparator";
 import ThemeSwitcher from "./components/ui/ThemeSwitcher";
 import { ThemeProvider } from "./stores/ThemeProvider";
 import HoldDelete from "./components/hold-to-delete/HoldDelete";
+import Heading from "./components/ui/Heading";
+import SmoothButtonComponent from "./components/Smooth-button/SmoothButtonComponent";
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
           </div>
           <Header />
           <Separator />
+          <Heading module="02" title="Css Animation" />
           {/* --- */}
 
           <CardStacking />
@@ -40,6 +43,9 @@ function App() {
           <HoldDelete />
           {/* --- */}
           <Separator />
+          <Heading module="03" title="Animation with Motion" />
+          <Separator />
+          <SmoothButtonComponent />
           <Footer />
         </Container>
       </ThemeProvider>
