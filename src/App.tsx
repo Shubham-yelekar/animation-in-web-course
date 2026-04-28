@@ -13,6 +13,7 @@ import Header from "./components/ui/Header";
 import Separator from "./components/ui/Saparator";
 import ThemeSwitcher from "./components/ui/ThemeSwitcher";
 import { ThemeProvider } from "./stores/ThemeProvider";
+import HoldDelete from "./components/hold-to-delete/HoldDelete";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <TextAnimationComponent />
           <OrbitingComponent />
           <CoinComponent />
+          <HoldDelete />
           {/* --- */}
           <Separator />
           <Footer />
