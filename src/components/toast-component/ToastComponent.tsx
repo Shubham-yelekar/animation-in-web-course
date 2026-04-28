@@ -5,10 +5,11 @@ const ToastComponent = () => {
   return (
     <section>
       <div className="px-2 py-4">
-        <h4 className="text-md font-semibold">Down Arrow</h4>
+        <h4 className="text-md font-semibold">Toast Component</h4>
 
         <p className="text-sm text-neutral-400 dark:text-neutral-500">
-          Hover to move the arrow
+          toast component with animation on add and remove. Click the button to
+          add a
         </p>
       </div>
       <ComponentBlock>
@@ -29,7 +30,7 @@ function Toaster() {
         ))}
       </div>
       <button
-        className="bg-background text-foreground ring-border hover:bg-muted relative mt-auto inline-flex h-8 w-auto items-center justify-center rounded-full px-3 text-sm font-medium shadow-sm ring-1 transition-colors"
+        className="btn"
         onClick={() => {
           setToasts(toasts + 1);
         }}

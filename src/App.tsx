@@ -2,6 +2,7 @@ import "./App.css";
 import ArrowDown from "./components/arrow-down/ArrowDown";
 import CardHover from "./components/card-hover/CardHover";
 import CardStacking from "./components/card-stacking/CardStacking";
+import TextAnimationComponent from "./components/text-animation/TextAnimationComponent";
 import Toast from "./components/toast-component/ToastComponent";
 
 import Container from "./components/ui/Container";
@@ -30,6 +31,7 @@ function App() {
 
           <ArrowDown />
           <Toast />
+          <TextAnimationComponent />
           <Separator />
           <Footer />
         </Container>
