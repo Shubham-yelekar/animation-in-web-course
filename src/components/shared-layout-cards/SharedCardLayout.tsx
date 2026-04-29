@@ -37,6 +37,14 @@ const CATS = [
   },
 ];
 
+type Card = {
+  id: number;
+  title: string;
+  desc: string;
+  long_description: string;
+  img: string;
+};
+
 const SharedCardLayout = () => {
   return (
     <section>
@@ -56,7 +64,7 @@ const SharedCardLayout = () => {
 };
 
 function CardList() {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [activeCard, setActiveCard] = useState<Card | null>(null);
   const ref = useRef(null);
   useOnClickOutside(ref, () => setActiveCard(null));
   useEffect(() => {
@@ -75,73 +83,98 @@ function CardList() {
       <AnimatePresence>
         {activeCard ? (
           <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.1 }}
-              className="bg-black-500 bg-opacity-50 pointer-events-none absolute inset-0 z-10 h-full w-full backdrop-blur-sm"
-            />
-            <p className="text-muted-foreground absolute bottom-2 z-30 w-full text-center text-xs">
+            {/* <p className="text-muted-foreground absolute bottom-2 z-30 w-full text-center text-xs">
               Press 'Esc' Key to close the card
-            </p>
+            </p> */}
             <motion.div
-              ref={ref}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute inset-0 z-20 grid items-center justify-center"
-            >
-              <div className="fit-content bg-card flex w-96 cursor-pointer flex-col justify-between gap-4 rounded-xl p-3 shadow-2xl">
+              className="absolute inset-0 z-10 h-full w-full bg-black/20"
+            />
+            <div className="absolute inset-0 z-20 grid items-center justify-center overflow-hidden">
+              <motion.div
+                ref={ref}
+                layoutId={`card-${activeCard.title}`}
+                className="fit-content bg-card flex w-96 cursor-pointer flex-col justify-between gap-4 rounded-xl p-3 shadow-2xl"
+              >
                 <div className="flex items-center gap-4 text-sm">
-                  <img
-                    src={CATS[activeCard - 1].img}
+                  <motion.img
+                    src={activeCard.img}
                     alt=""
                     className="h-10 w-10 rounded-lg object-cover"
+                    layoutId={`img-${activeCard.title}`}
+                    style={{ borderRadius: 12 }}
                   />
                   <div className="flex flex-1 items-center justify-between">
                     <div className="flex-1">
-                      <h2 className="game-title">
-                        {CATS[activeCard - 1].title}
-                      </h2>
-                      <p className="text-muted-foreground">
-                        {CATS[activeCard - 1].desc}
-                      </p>
+                      <motion.h2
+                        layoutId={`title-${activeCard.title}`}
+                        className="game-title"
+                      >
+                        {activeCard.title}
+                      </motion.h2>
+                      <motion.p
+                        layoutId={`desc-${activeCard.title}`}
+                        className="text-muted-foreground"
+                      >
+                        {activeCard.desc}
+                      </motion.p>
                     </div>
-                    <button className="rounded-2xl bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-500 dark:bg-neutral-800">
+                    <motion.button
+                      layoutId={`btn-${activeCard.title}`}
+                      className="rounded-2xl bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-500 dark:bg-neutral-800"
+                    >
                       Get
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
-                <p className="text-muted-foreground text-xs">
-                  {CATS[activeCard - 1].long_description}
-                </p>
-              </div>
-            </motion.div>
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="text-muted-foreground text-xs"
+                >
+                  {activeCard.long_description}
+                </motion.p>
+              </motion.div>
+            </div>
           </>
         ) : null}
       </AnimatePresence>
       <ul className="mx-auto flex h-full max-w-72 flex-col justify-center gap-2">
         {CATS.map((cat) => (
-          <li
+          <motion.li
             key={cat.id}
             onClick={() => setActiveCard(cat)}
+            layoutId={`card-${cat.title}`}
             className="ease-out-cubic flex cursor-pointer items-center gap-3 rounded-xl p-2 text-sm transition-colors duration-200 hover:dark:bg-neutral-900"
           >
-            <img
+            <motion.img
               src={cat.img}
               alt={cat.title}
+              layoutId={`img-${cat.title}`}
               className="h-10 w-10 rounded-lg object-cover"
+              style={{ borderRadius: 12 }}
             />
             <div className="flex-1">
-              <h2>{cat.title}</h2>
-              <p className="text-muted-foreground">{cat.desc}</p>
+              <motion.h2 layoutId={`title-${cat.title}`}>{cat.title}</motion.h2>
+              <motion.p
+                layoutId={`desc-${cat.title}`}
+                className="text-muted-foreground"
+              >
+                {cat.desc}
+              </motion.p>
             </div>
-            <div className="rounded-2xl bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-500 dark:bg-neutral-800">
+            <motion.div
+              layoutId={`btn-${cat.title}`}
+              className="rounded-2xl bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-500 dark:bg-neutral-800"
+            >
               View
-            </div>
-          </li>
+            </motion.div>
+          </motion.li>
         ))}
       </ul>
     </>
