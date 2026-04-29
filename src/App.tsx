@@ -16,6 +16,7 @@ import { ThemeProvider } from "./stores/ThemeProvider";
 import HoldDelete from "./components/hold-to-delete/HoldDelete";
 import Heading from "./components/ui/Heading";
 import SmoothButtonComponent from "./components/Smooth-button/SmoothButtonComponent";
+import SharedCardLayout from "./components/shared-layout-cards/SharedCardLayout";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Heading module="03" title="Animation with Motion" />
           <Separator />
           <SmoothButtonComponent />
+          <SharedCardLayout />
           <Footer />
         </Container>
       </ThemeProvider>

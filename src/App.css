@@ -201,13 +201,22 @@
     backwards;
   --animate-orbiting: Orbiting 5s linear infinite forwards;
   --animate-rotate: Rotate 5s linear infinite forwards;
-
+  --animate-spinner-fade: spinner-fade 1.2s linear infinite;
   @keyframes TextReveal {
     from {
       transform: translateY(100%);
     }
     to {
       transform: translateY(0%);
+    }
+  }
+
+  @keyframes spinner-fade {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.15;
     }
   }
 
