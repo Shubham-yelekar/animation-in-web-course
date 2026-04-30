@@ -39,7 +39,7 @@ function SmoothButton() {
   return (
     <div className="outer-wrapper flex h-full w-full items-center justify-center">
       <button
-        className="blue-button relative flex h-9 min-w-48 items-center justify-center overflow-hidden rounded-md bg-linear-to-b from-blue-400 from-0% to-blue-600 to-100% py-2 text-sm"
+        className="blue-button relative flex h-8 min-w-48 items-center justify-center overflow-hidden rounded-md bg-linear-to-b from-blue-500 from-0% to-blue-600 to-100% py-2 text-sm text-neutral-50"
         disabled={buttonState !== "idle"}
         onClick={() => {
           // This code is just a placeholder

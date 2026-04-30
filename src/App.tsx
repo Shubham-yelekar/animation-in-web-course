@@ -17,6 +17,7 @@ import HoldDelete from "./components/hold-to-delete/HoldDelete";
 import Heading from "./components/ui/Heading";
 import SmoothButtonComponent from "./components/Smooth-button/SmoothButtonComponent";
 import SharedCardLayout from "./components/shared-layout-cards/SharedCardLayout";
+import GameCardComponent from "./components/game-card/GameCardComponent";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Separator />
           <SmoothButtonComponent />
           <SharedCardLayout />
+          <GameCardComponent />
           <Footer />
         </Container>
       </ThemeProvider>
