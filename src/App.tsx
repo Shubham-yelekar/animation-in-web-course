@@ -18,6 +18,7 @@ import Heading from "./components/ui/Heading";
 import SmoothButtonComponent from "./components/Smooth-button/SmoothButtonComponent";
 import SharedCardLayout from "./components/shared-layout-cards/SharedCardLayout";
 import GameCardComponent from "./components/game-card/GameCardComponent";
+import FeedbackComponent from "./components/feedback-popover/FeedbackComponent";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <SmoothButtonComponent />
           <SharedCardLayout />
           <GameCardComponent />
+          <FeedbackComponent />
           <Footer />
         </Container>
       </ThemeProvider>

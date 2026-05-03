@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useEffect, useRef, useState } from "react";
 import ComponentBlock from "../ui/ComponentBlock";
 import { useOnClickOutside } from "usehooks-ts";
@@ -14,7 +12,7 @@ const GameCardComponent = () => {
         <p className="text-sm text-neutral-400 dark:text-neutral-500"></p>
       </div>
       <ComponentBlock>
-        <div className="mx-auto flex h-full w-64 items-center">
+        <div className="mx-auto flex h-full">
           <CardWrapper />
         </div>
       </ComponentBlock>
@@ -23,7 +21,7 @@ const GameCardComponent = () => {
 };
 
 const CardWrapper = () => {
-  const [activeCard, setActiveCard] = React.useState(null);
+  const [activeCard, setActiveCard] = useState(null);
   useEffect(() => {
     function onKeyDown(event) {
       if (event.key === "Escape") {
@@ -36,13 +34,13 @@ const CardWrapper = () => {
   }, []);
 
   return (
-    <div className="relative mx-auto flex h-full w-full flex-col items-center justify-center">
+    <div className="relative mx-auto flex h-full w-64 flex-col items-center justify-center">
       {/* <AnimatePresence> */}
       {Games.map((card, index) => (
         <GameCard key={index} card={card} setActiveCard={setActiveCard} />
       ))}
       {/* </AnimatePresence> */}
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout">
         {activeCard && (
           <ActiveCard activeCard={activeCard} setActiveCard={setActiveCard} />
         )}
@@ -56,12 +54,10 @@ const GameCard = ({ card, setActiveCard }) => {
     <motion.div
       onClick={() => setActiveCard(card)}
       layoutId={`Card-${card.title}`}
-      whileTap={{ scale: 0.98 }}
-      whileHover={{ scale: 1.02 }}
       className="relative cursor-pointer overflow-hidden"
       style={{ borderRadius: 20 }}
     >
-      <div className="mx-auto h-50 max-h-50 w-42 max-w-42">
+      <div className="ease-out-cubic mx-auto h-50 w-42 transform transition-transform duration-150 active:scale-[0.97]">
         <motion.div
           layoutId={`Card-header-${card.title}`}
           className="absolute right-0 bottom-0 left-0 z-10 h-fit w-full bg-black/40 p-2 text-sm backdrop-blur-sm"

@@ -229,6 +229,15 @@
     }
   }
 
+  @keyframes spinner-spin {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.15;
+    }
+  }
+
   @keyframes Rotate {
     to {
       transform: rotateY(360deg);
@@ -350,4 +359,8 @@
   100% {
     opacity: 0.15;
   }
+}
+
+.placeholder[data-feedback="true"] {
+  opacity: 0 !important;
 }
