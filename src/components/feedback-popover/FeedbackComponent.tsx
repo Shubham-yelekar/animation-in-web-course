@@ -1,9 +1,8 @@
 import { useOnClickOutside } from "usehooks-ts";
 import ComponentBlock from "../ui/ComponentBlock";
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence, spring } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Dots from "../ui/Dots";
-import cn from "../../util/cn";
 
 const FeedbackComponent = () => {
   return (
@@ -11,9 +10,9 @@ const FeedbackComponent = () => {
       <div className="px-2 py-4">
         <h4 className="text-md font-semibold">Feedback button</h4>
 
-        {/* <p className="text-sm text-neutral-400 dark:text-neutral-500">
-          This is similar to the sonnar components
-        </p> */}
+        <p className="mt-px text-sm text-neutral-400 dark:text-neutral-500">
+          Using AnimatePresence to animate between the button and the form.
+        </p>
       </div>
       <ComponentBlock>
         <FeedbackButton />
@@ -141,7 +140,7 @@ function FeedbackButton() {
                     className="h-32 w-full resize-none rounded-t-lg p-3 text-sm text-neutral-900 outline-none placeholder:opacity-0"
                     required
                   />
-                  <div className="relative flex h-12 items-center px-[10px]">
+                  <div className="relative flex h-12 items-center px-2">
                     <svg
                       className="absolute inset-x-0 -top-px"
                       width="352"
@@ -156,7 +155,7 @@ function FeedbackButton() {
                       />
                     </svg>
 
-                    <div className="absolute top-0 left-0 -translate-x-[1.5px] -translate-y-1/2">
+                    <div className="absolute top-0 left-0 translate-x-[-1.5px] -translate-y-1/2">
                       <svg width="6" height="12" viewBox="0 0 6 12" fill="none">
                         <path
                           d="M0 2C0.65 2 1.3 2.1 1.91 2.3C2.52 2.5 3.07 2.8 3.53 3.17C3.99 3.54 4.36 3.98 4.61 4.46C4.87 4.95 5 5.47 5 6C5 6.52 4.87 7.04 4.61 7.53C4.36 8.01 3.99 8.45 3.53 8.82C3.07 9.19 2.52 9.49 1.91 9.69C1.3 9.89 0.65 10 0 10V6V2Z"
@@ -188,7 +187,7 @@ function FeedbackButton() {
 
                     <button
                       type="submit"
-                      className="relative ml-auto flex h-8 w-32 items-center justify-center overflow-hidden rounded-md bg-gradient-to-b from-[#1994ff] to-[#157cff] text-[12px] font-semibold text-white shadow-[inset_0_0_1px_1px_rgba(255,255,255,0.08),0_1px_1.5px_0_rgba(0,0,0,0.32),0_0_0_0.5px_#1a94ff]"
+                      className="relative ml-auto flex h-8 w-32 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-gradient-to-b from-[#1994ff] to-[#157cff] text-[12px] font-semibold text-white shadow-[inset_0_0_1px_1px_rgba(255,255,255,0.08),0_1px_1.5px_0_rgba(0,0,0,0.32),0_0_0_0.5px_#1a94ff]"
                     >
                       <AnimatePresence mode="popLayout" initial={false}>
                         <motion.span

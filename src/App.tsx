@@ -19,6 +19,9 @@ import SmoothButtonComponent from "./components/Smooth-button/SmoothButtonCompon
 import SharedCardLayout from "./components/shared-layout-cards/SharedCardLayout";
 import GameCardComponent from "./components/game-card/GameCardComponent";
 import FeedbackComponent from "./components/feedback-popover/FeedbackComponent";
+import MultiStepComponent from "./components/multi-step-component/MultiStepComponent";
+import { Trash } from "@phosphor-icons/react";
+import TrashInteraction from "./components/trash-interaction/TrashInteraction";
 
 function App() {
   return (
@@ -52,6 +55,8 @@ function App() {
           <SharedCardLayout />
           <GameCardComponent />
           <FeedbackComponent />
+          <MultiStepComponent />
+          <TrashInteraction />
           <Footer />
         </Container>
       </ThemeProvider>

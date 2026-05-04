@@ -24,7 +24,7 @@ function Toaster() {
 
   return (
     <div className="bg-background relative flex h-full w-full flex-col items-center p-6">
-      <div className="absolute bottom-[80px] left-1/2 flex w-[356px] -translate-x-1/2 flex-col gap-4">
+      <div className="absolute bottom-20 left-1/2 flex w-90 -translate-x-1/2 flex-col gap-4">
         {Array.from({ length: toasts }).map((_, i) => (
           <Toast key={i} index={toasts - 1 - i} />
         ))}
