@@ -9,7 +9,9 @@ const GameCardComponent = () => {
       <div className="px-2 py-4">
         <h4 className="text-md font-semibold">Game Card</h4>
 
-        <p className="text-sm text-neutral-400 dark:text-neutral-500"></p>
+        <p className="text-sm text-neutral-400 dark:text-neutral-500">
+          Playstore like game card animation.
+        </p>
       </div>
       <ComponentBlock>
         <div className="mx-auto flex h-full">

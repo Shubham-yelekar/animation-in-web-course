@@ -1,23 +1,52 @@
-import CourseLogo from "./CourseLogo";
+import { GlobeIcon, LinkedinLogoIcon, XLogoIcon } from "@phosphor-icons/react";
+import ThemeSwitcher from "./ThemeSwitcher";
+
+const SOCIAL_LINKS = [
+  {
+    label: "Twitter",
+    href: "https://twitter.com/shubhamyelekar",
+    icon: <XLogoIcon size={14} weight="bold" />,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/shubhamyelekar",
+    icon: <LinkedinLogoIcon size={14} weight="bold" />,
+  },
+  {
+    label: "Website",
+    href: "https://shubhamyelekar.com",
+    icon: <GlobeIcon size={14} weight="bold" />,
+  },
+];
 
 const Header = () => {
   return (
-    <section className="relative flex flex-col gap-8 bg-neutral-50 px-2 py-4 dark:bg-neutral-900">
-      <h1 className="text-5xl font-semibold tracking-tight dark:tracking-tight">
-        Collection of all the components I created in the course.
-      </h1>
-      <div className="flex gap-4">
-        <div className="rounded-xl bg-neutral-100 p-3 dark:bg-neutral-800">
-          <CourseLogo />
+    <nav className="bg-card border-border sticky top-0 z-[100] flex items-center justify-between border-b px-3 py-2 backdrop-blur-sm">
+      <p className="text-xs font-medium text-neutral-700 dark:text-neutral-300">
+        Shubham Yelekar
+      </p>
+
+      <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5">
+          {SOCIAL_LINKS.map(({ label, href, icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="flex items-center justify-center rounded-md p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
+            >
+              {icon}
+            </a>
+          ))}
         </div>
-        <div>
-          <h3 className="text-md font-semibold">Animation on the Web</h3>
-          <p className="text-sm text-neutral-800 dark:text-neutral-400">
-            Web Animation Course by Emil{" "}
-          </p>
-        </div>
+
+        <div className="h-4 w-px bg-neutral-200 dark:bg-neutral-700" />
+
+        <ThemeSwitcher />
       </div>
-    </section>
+    </nav>
   );
 };
 

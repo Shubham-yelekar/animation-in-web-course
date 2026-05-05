@@ -5,10 +5,10 @@ const OrbitingComponent = () => {
   return (
     <section>
       <div className="px-2 py-4">
-        <h4 className="text-md font-semibold">Text Animation</h4>
+        <h4 className="text-md font-semibold">Orbiting Elements</h4>
 
         <p className="text-sm text-neutral-400 dark:text-neutral-500">
-          Each letter is animated with slight delay.
+          Css animation with z-index and transform
         </p>
       </div>
       <ComponentBlock>

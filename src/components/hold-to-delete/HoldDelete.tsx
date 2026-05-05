@@ -1,13 +1,14 @@
-import { useState, useEffect } from "react";
 import ComponentBlock from "../ui/ComponentBlock";
-import cn from "../../util/cn";
+
 const HoldDelete = () => {
   return (
     <section>
       <div className="px-2 py-4">
         <h4 className="text-md font-semibold">Hold to Delete</h4>
 
-        <p className="text-sm text-neutral-400 dark:text-neutral-500"></p>
+        <p className="text-sm text-neutral-400 dark:text-neutral-500">
+          Clip path animation
+        </p>
       </div>
       <ComponentBlock>
         <div className="relative flex h-full w-full flex-col items-center justify-center gap-4 perspective-near transform-3d">

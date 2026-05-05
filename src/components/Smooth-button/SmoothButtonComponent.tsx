@@ -17,7 +17,7 @@ const SmoothButtonComponent = () => {
         <h4 className="text-md font-semibold">Smooth Button</h4>
 
         <p className="text-sm text-neutral-400 dark:text-neutral-500">
-          Smooth Button
+          Button transitioning through different states.
         </p>
       </div>
       <ComponentBlock>

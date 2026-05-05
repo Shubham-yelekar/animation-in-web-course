@@ -6,7 +6,9 @@ const CoinComponent = () => {
       <div className="px-2 py-4">
         <h4 className="text-md font-semibold">Coin Animation</h4>
 
-        <p className="text-sm text-neutral-400 dark:text-neutral-500"></p>
+        <p className="text-sm text-neutral-400 dark:text-neutral-500">
+          Pure css animation
+        </p>
       </div>
       <ComponentBlock>
         <div className="flex h-full w-full items-center justify-center perspective-near transform-3d">
