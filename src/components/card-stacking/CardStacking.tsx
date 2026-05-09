@@ -24,7 +24,7 @@ const StackedComponent = () => {
       {new Array(LENGTH).fill(0).map((_, i) => (
         <div
           style={{ "--index": LENGTH - i }}
-          className="shadow-accent-foreground bg-card translate-y-[calc(-13%*var(--index))]scale-[calc(1-var(--index)*0.05)] h-18 w-80 origin-bottom rounded-xl border border-neutral-200 shadow-xs [grid-area:1/1] dark:border-neutral-700"
+          className="shadow-accent-foreground bg-card h-18 w-80 origin-bottom translate-y-[calc(-13%*var(--index))] scale-[calc(1-var(--index)*0.05)] rounded-xl border border-neutral-200 shadow-xs [grid-area:1/1] dark:border-neutral-700"
           key={i}
         />
       ))}

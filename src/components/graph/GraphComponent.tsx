@@ -1,4 +1,4 @@
-import { use } from "react";
+import { useRef } from "react";
 import ComponentBlock from "../ui/ComponentBlock";
 import {
   motion,
@@ -28,6 +28,7 @@ const GraphComponent = () => {
 
 function Graph() {
   const clipPathValue = useMotionValue(0);
+  const timeoutRef = useRef(null);
   const smoothClipPath = useSpring(clipPathValue, {
     stiffness: 150,
     damping: 20,
@@ -46,6 +47,16 @@ function Graph() {
     <div
       className="relative flex h-full w-full items-center justify-center px-8"
       onPointerMove={onPointerMove}
+      onPointerLeave={() => {
+        timeoutRef.current = setTimeout(() => {
+          smoothClipPath.set(0);
+        }, 1000);
+      }}
+      onPointerEnter={() => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+      }}
     >
       <motion.svg
         style={{

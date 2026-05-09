@@ -28,20 +28,6 @@ const CardHoverComponent = () => {
         <p className="mt-1 leading-none text-zinc-500">Project description</p>
 
         {/* card-icon */}
-        <svg
-          width="11"
-          height="11"
-          viewBox="0 0 11 11"
-          fill="none"
-          className="absolute top-4 right-4"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.33333 0.4375C6.33333 0.195877... (truncated for brevity) ...0.5 10.0625V6.27083Z"
-            fill="#58585F"
-          />
-        </svg>
       </div>
     </a>
   );

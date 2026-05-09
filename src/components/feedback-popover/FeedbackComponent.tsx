@@ -66,7 +66,7 @@ function FeedbackButton() {
           setFormState("idle");
           setFeedback("");
         }}
-        className="relative mt-0! bg-white px-4 py-2 text-sm text-neutral-900 transition-colors outline-none"
+        className="relative mt-0! bg-white px-4 py-2 text-sm text-neutral-900 shadow-2xl transition-colors outline-none"
       >
         <motion.span layoutId="title" className="block">
           Feedback
