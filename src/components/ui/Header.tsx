@@ -21,7 +21,7 @@ const SOCIAL_LINKS = [
 
 const Header = () => {
   return (
-    <nav className="bg-card border-border sticky top-0 z-[100] flex items-center justify-between border-b px-3 py-2 backdrop-blur-sm">
+    <nav className="bg-card border-border flex items-center justify-between border-b px-3 py-2 backdrop-blur-sm">
       <p className="text-xs font-medium text-neutral-700 dark:text-neutral-300">
         Shubham Yelekar
       </p>
