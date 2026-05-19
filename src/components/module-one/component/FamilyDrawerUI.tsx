@@ -45,9 +45,9 @@ const FamilyDrawer = () => {
   }, [bounds.height]);
 
   return (
-    <>
+    <div className="relative h-full">
       <button
-        className="focus-visible:shadow-focus-ring-button fixed top-1/2 left-1/2 h-[44px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-200 bg-white px-4 py-2 font-medium text-black transition-colors hover:bg-[#F9F9F8] md:font-medium"
+        className="focus-visible:shadow-focus-ring-button absolute top-1/2 left-1/2 h-[44px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-200 bg-white px-4 py-2 font-medium text-black transition-colors hover:bg-[#F9F9F8] md:font-medium"
         onClick={() => setIsOpen(true)}
       >
         Try it out
@@ -99,7 +99,7 @@ const FamilyDrawer = () => {
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
-    </>
+    </div>
   );
 };
 

@@ -19,10 +19,10 @@ import SharedCardLayout from "./components/shared-layout-cards/SharedCardLayout"
 import GameCardComponent from "./components/game-card/GameCardComponent";
 import FeedbackComponent from "./components/feedback-popover/FeedbackComponent";
 import MultiStepComponent from "./components/multi-step-component/MultiStepComponent";
-
 import TrashInteraction from "./components/trash-interaction/TrashInteraction";
 import GraphComponent from "./components/graph/GraphComponent";
 import ModuleOne from "./components/module-one/ModuleOne";
+import DynamicIslandComponent from "./components/dynamic-island/DynamicIslandComponent";
 
 function App() {
   return (
@@ -56,6 +56,7 @@ function App() {
           <Separator />
           <ModuleOne />
           <Separator />
+          <DynamicIslandComponent />
           <Footer />
         </Container>
       </ThemeProvider>
