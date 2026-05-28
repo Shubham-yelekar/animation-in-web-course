@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence, spring } from "motion/react";
 
 export function Ring() {
   const [isSilent, setIsSilent] = useState(false);
@@ -16,15 +16,23 @@ export function Ring() {
   }, [isSilent]);
 
   return (
-    <div
-      className={clsx(
-        "relative flex h-7 items-center justify-between px-2.5",
-        isSilent ? "w-[148px]" : "w-32",
-      )}
+    <motion.div
+      className="relative flex h-7 items-center justify-between px-2.5"
+      animate={{ width: isSilent ? 148 : 128 }}
+      transition={{ type: "spring", bounce: 0.5 }}
     >
-      {isSilent ? (
-        <div className="absolute left-[5px] h-[18px] w-10 rounded-full bg-[#FD4F30]" />
-      ) : null}
+      <AnimatePresence>
+        {" "}
+        {isSilent ? (
+          <motion.div
+            initial={{ opacity: 0, width: 0, filter: "blur(4px)" }}
+            animate={{ opacity: 1, width: 40, filter: "blur(0px)" }}
+            exit={{ opacity: 0, width: 0, filter: "blur(4px)" }}
+            transition={{ type: "spring", bounce: 0.35 }}
+            className="absolute left-[5px] h-[18px] w-10 rounded-full bg-[#FD4F30]"
+          />
+        ) : null}
+      </AnimatePresence>
       <div className="relative h-[12.75px] w-[11.25px]">
         <svg
           className="absolute inset-0"
@@ -50,12 +58,30 @@ export function Ring() {
         ) : null}
       </div>
       <div className="ml-auto flex items-center">
-        {isSilent ? (
-          <span className="text-xs font-medium text-[#FD4F30]">Silent</span>
-        ) : (
-          <span className="text-xs font-medium text-white">Ring</span>
-        )}
+        <AnimatePresence mode="popLayout" initial={false}>
+          {isSilent ? (
+            <motion.span
+              key="silent"
+              initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              className="text-xs font-medium text-[#FD4F30]"
+            >
+              Silent
+            </motion.span>
+          ) : (
+            <motion.span
+              key="ring"
+              initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              className="text-xs font-medium text-white"
+            >
+              Ring
+            </motion.span>
+          )}{" "}
+        </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }

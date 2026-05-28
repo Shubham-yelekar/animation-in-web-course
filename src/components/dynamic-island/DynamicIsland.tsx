@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { motion } from "motion/react";
 import { Ring } from "./Ring";
 const DynamicIsland = () => {
   const [view, setView] = useState("idle");
@@ -13,11 +14,14 @@ const DynamicIsland = () => {
   }, [view]);
   return (
     <div className="flex h-full flex-col items-center justify-center">
-      <div className="flex h-[160px] justify-center">
-        <div className="h-fit min-w-[100px] overflow-hidden rounded-full bg-black">
+      <motion.div layout className="flex h-[160px] justify-center">
+        <motion.div
+          className="h-fit min-w-[100px] overflow-hidden bg-black"
+          style={{ borderRadius: "36px" }}
+        >
           {content}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <div className="flex justify-center gap-4">
         <button
           type="button"

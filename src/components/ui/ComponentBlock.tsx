@@ -7,5 +7,4 @@ const ComponentBlock = ({ children }: { children: ReactNode }) => {
     </div>
   );
 };
-
 export default ComponentBlock;
