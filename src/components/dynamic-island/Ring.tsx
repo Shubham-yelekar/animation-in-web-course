@@ -33,7 +33,7 @@ export function Ring() {
           />
         ) : null}
       </AnimatePresence>
-      <div className="relative h-[12.75px] w-[11.25px]">
+      <motion.div className="relative h-[12.75px] w-[11.25px]" animate={{ rotate: isSilent ? [0, -15, 5, -2, 0] : [0, 20 , -15, 12.5, -10 , 10, -7.5, -5, 5, 0] , x: isSilent ? 9 : 0}}>
         <svg
           className="absolute inset-0"
           width="11.25"
@@ -49,14 +49,14 @@ export function Ring() {
         </svg>
         {isSilent ? (
           <div className="absolute inset-0 h-5 translate-x-[5px] -translate-y-[5px] rotate-[-40deg]">
-            <div className="h-4 w-fit rounded-full">
+            <motion.div animate={{height : isSilent? 16: 0}} transition={{ease : "easeInOut", duration: isSilent ? 0.125: 0.05, delay : isSilent? 0.15: 0}}  className="w-fit rounded-full">
               <div className="flex h-full w-[3px] items-center justify-center rounded-full bg-[#FD4F30]">
                 <div className="h-full w-[0.75px] rounded-full bg-white" />
               </div>
-            </div>
+            </motion.div>
           </div>
         ) : null}
-      </div>
+      </motion.div>
       <div className="ml-auto flex items-center">
         <AnimatePresence mode="popLayout" initial={false}>
           {isSilent ? (
