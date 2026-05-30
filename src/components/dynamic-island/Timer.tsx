@@ -8,14 +8,14 @@ export function Timer() {
     <div className="flex w-[284px] items-center gap-2 py-3 pr-5 pl-3.5">
       <motion.button
         whileTap={{ scale: 0.9 }}
-        aria-label="Pause timer"
+        aria-label={isPaused ? "Play timer" : "Pause timer"}
         onClick={() => setIsPaused((p) => !p)}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5A3C07] transition-colors hover:bg-[#694608]"
       >
         <AnimatePresence initial={false} mode="wait">
           {isPaused ? (
             <motion.svg
-              key="play"
+              key="play" // Fixed: Play icon key
               initial={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
               animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
               exit={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
@@ -29,7 +29,7 @@ export function Timer() {
             </motion.svg>
           ) : (
             <motion.svg
-              key="play"
+              key="pause" // Fixed: Pause icon key to trigger AnimatePresence
               initial={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
               animate={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
               exit={{ scale: 0.5, filter: "blur(4px)", opacity: 0 }}
@@ -82,16 +82,12 @@ function Counter({ paused }: { paused?: boolean }) {
 
     const id = setInterval(() => {
       setCount((c) => {
-        if (c === 0) {
-          return 60;
-        }
+        if (c === 0) return 60;
         return c - 1;
       });
     }, 1000);
 
-    return () => {
-      clearInterval(id);
-    };
+    return () => clearInterval(id);
   }, [paused]);
 
   const countArray = count.toString().padStart(2, "0").split("");
@@ -103,7 +99,7 @@ function Counter({ paused }: { paused?: boolean }) {
         {countArray.map((n, i) => (
           <motion.div
             className="inline-block tabular-nums"
-            key={n + i}
+            key={`${i}-${n}`} // Fixed: Ensures uniqueness even if numbers repeat (e.g., 55)
             initial={{ y: "12px", filter: "blur(2px)", opacity: 0 }}
             animate={{ y: "0", filter: "blur(0px)", opacity: 1 }}
             exit={{ y: "-12px", filter: "blur(2px)", opacity: 0 }}
